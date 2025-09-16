@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Constructor Example</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    // Constructor function
+    function Button(label, color) {
+      this.label = label;
+      this.color = color;
+
+      this.render = function () {
+        const button = document.createElement('button');
+        button.textContent = this.label;
+        button.style.backgroundColor = this.color;
+        document.getElementById('app').appendChild(button);
+      };
+    }
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    function create_Button() {
+        const myButton = new Button('Click Me', getRandomColor());
+        myButton.render();
+        /*alert('Button created!'); */
+    }
+
+
+
+  </script>
+
+    // Create a new button object
+    <button type="button" onclick="create_Button()">Generate Button</button>
+
+
+</body>
+</html>

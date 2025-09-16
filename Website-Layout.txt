@@ -1,0 +1,13 @@
+Header: Website Name
+
+Body: Books, Updates, Roadmap
+	headline.font = Ultra (https://tinyurl.com/m3438b52)
+	main.font = Bad Script (https://tinyurl.com/yyt48unf)
+Sidebar (Right): recently opened Channels (Questions, Recommendations)
+
+Footer: Impressum, author, etc.
+
+float? current time, raise Channel (open new discussion or  sth)
+a:hover, a:active {
+  color: #059862;
+}
