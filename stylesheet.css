@@ -1,6 +1,5 @@
 /* The sidebar menu */
-.navbar {
-  
+  .navbar {
     width: 160px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
@@ -15,7 +14,7 @@
   .navbar a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.5rem;
     color: #818181;
     display: block;
     align-self: right;
@@ -58,18 +57,14 @@
     background-color: #780000;
     color: #c1121f;
     border: 20px;
-  }
-
-  .div {
-    overflow: hidden;
-  }
-
-  #updatebar {
     width: 100%;
     max-width: 900px;
     margin: auto;
   }
 
+  .div {
+    overflow: hidden;
+  }
   #bookbar {
     width: 100%;
     max-width: 900px;
@@ -118,3 +113,9 @@
   .QuA p{
     line-height: initial;
   }
+
+  .footer, footer a{
+    font-size: 1.25rem;
+  }
+
+  
