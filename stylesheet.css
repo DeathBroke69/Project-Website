@@ -1,121 +1,204 @@
-/* The sidebar menu */
-  .navbar {
-    width: 160px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 55px; /* Stay at the top */
-    right: 0;
-    background-color: rgba(202, 187, 156, 0); /* if the a value is set to 0, the content will seemingly hover */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
-  }
-  
-  /* The navigation menu links */
-  .navbar a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 1.5rem;
-    color: #818181;
-    display: block;
-    align-self: right;
-  }
-  
-  /* When you mouse over the navigation links, change their color */
-  .navbar a:hover {
-    color: #f72424;
-  }
+/* Navbar container */
+.navbar {
+  width: 160px; /* Fixed width */
+  position: fixed; /* Sticks to the side */
+  z-index: 1000; /* Ensure it stays on top */
+  top: 55px; /* Adjusted to avoid overlap with the header */
+  right: 0; /* Align to the right */
+  background-color: rgba(92, 58, 33, 0.9); /* Darker brown for better contrast */
+  overflow-y: hidden; /* Prevent unnecessary scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  padding-top: 20px;
+  border-left: 2px solid #deb887; /* Add a border for better visibility */
+  height: auto; /* Adjust height to fit content */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center-align the links */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
 
-  .h1 {
-    font-family: "Bad Script", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 3em;
-    color: #fdf0d5;
-  }
-  
-  /* Style page content */
-  .main {
-    color: #fdf0d5;
-    margin-left: 160px; /* Same as the width of the sidebar */
-    padding: 0px 10px;
-  }
+/* Navbar links */
+.navbar a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #deb887; /* Burlywood color for text */
+  display: block; /* Ensure links stack vertically */
+  font-family: 'Courier New', Courier, monospace;
+  white-space: nowrap; /* Prevent text wrapping */
+  text-align: center; /* Center-align text */
+}
 
-  .body {
-    color: #fdf0d5;
-    border: 2ems;
-    margin-left: 160px; /* Same as the width of the sidebar */
-    font-family: "Bad Script"
-  }
+.navbar a:hover {
+  color: #ff4500; /* Orange-red hover effect */
+  background-color: rgba(0, 0, 0, 0.2); /* Subtle background change on hover */
+  border-radius: 5px; /* Rounded corners for hover effect */
+}
 
-  #bookbar{
-    background-color: #003049;
-    color: #669bbc;
-    border: 20px;
-  }
+/* Header styling */
+.h1 {
+  font-family: "Playfair Display", serif; /* Elegant serif font */
+  font-weight: 400;
+  font-size: 3em;
+  color: #f5deb3; /* Wheat color */
+  text-shadow: 2px 2px 4px #000; /* Subtle shadow for depth */
+}
 
-  #updatebar{
-    background-color: #780000;
-    color: #c1121f;
-    border: 20px;
-    width: 100%;
-    max-width: 900px;
-    margin: auto;
-  }
+/* Style page content */
+.main {
+  color: #f5deb3;
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+  background-color: #5c3a21; /* Dark brown background */
+  border: 2px solid #deb887; /* Burlywood border */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
 
-  .div {
-    overflow: hidden;
-  }
-  #bookbar {
-    width: 100%;
-    max-width: 900px;
-    margin: auto;
-  }
+/* Body styling */
+.body {
+  color: #f5deb3;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #5c3a21; /* Dark brown background */
+  padding: 20px;
+}
 
+/* Book bar styling */
+#bookbar {
+  background-color: #8b4513; /* Saddle brown */
+  color: #deb887; /* Burlywood text */
+  border: 2px solid #deb887;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Update bar styling */
+#updatebar {
+  background-color: #8b4513; /* Saddle brown */
+  color: #deb887; /* Burlywood text */
+  border: 2px solid #deb887;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Book entry styling */
 .book-entry {
-    display: flex;
-    align-items: center;
-    gap: 20px;   
-    margin-bottom: 30px;
-  }
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  background-color: #8b4513; /* Saddle brown */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
 
 .book-entry img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-  }
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #deb887; /* Burlywood border */
+}
 
 .book-desc {
-    flex: 1;
-    font-size: 1rem;
-  }
+  flex: 1;
+  font-size: 1rem;
+  color: #f5deb3; /* Wheat color */
+}
 
+/* Font styles */
 .bad-script-regular {
-    font-family: "Bad Script", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
+  font-family: "Bad Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 
 .ultra-regular {
-    font-family: "Ultra", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+  font-family: "Ultra", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-  .QuA{
-    line-height: 20px;
-    font-weight: 400;
-    font-style: normal;
-    border: 5px solid #fdf0d5;
-  }
+/* Question and Answer styling */
+.QuA {
+  line-height: 20px;
+  font-weight: 400;
+  font-style: normal;
+  border: 5px solid #deb887; /* Burlywood border */
+  background-color: #5c3a21; /* Dark brown background */
+  color: #f5deb3; /* Wheat color */
+  padding: 10px;
+  border-radius: 10px;
+}
 
-  .QuA p{
-    line-height: initial;
-  }
+.QuA p {
+  line-height: initial;
+}
 
-  .footer, footer a{
-    font-size: 1.25rem;
-  }
+/* Footer styling */
+.footer, footer a {
+  font-size: 1.25rem;
+  color: #f5deb3; /* Wheat color */
+  text-decoration: none;
+  background-color: #8b4513; /* Saddle brown */
+  padding: 10px;
+  border-top: 2px solid #deb887; /* Burlywood border */
+}
 
-  
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Add a subtle wooden texture to the background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/wood.png'); /* Wooden texture */
+  opacity: 0.2;
+  z-index: -1;
+}
+
+
+body {
+  background-color: #fdf0d5;
+  font-family: "Bad Script", cursive;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 16px;
+  width: 100%;
+  margin: 0;
+  padding: 8px;
+}
+
+.left, .right {
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+.left img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10%;
+}
+
+footer {
+  text-align: left;
+  padding: 16px;
+  background-color: #1f1007;
+}
