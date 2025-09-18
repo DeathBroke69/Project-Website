@@ -3,7 +3,7 @@
     width: 160px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
+    top: 55px; /* Stay at the top */
     right: 0;
     background-color: rgba(202, 187, 156, 0); /* if the a value is set to 0, the content will seemingly hover */
     overflow-x: hidden; /* Disable horizontal scroll */

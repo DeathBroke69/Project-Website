@@ -44,16 +44,14 @@
 
         function filter_books(genre = "all", length = "any", rating = "any", status = "any") {
 
-            // Get the selected filter values
+
             var genre = document.getElementById("genre").value;
             var length = document.getElementById("length").value;
             var rating = document.getElementById("rating").value;
             var status = document.getElementById("status").value;
 
-            // Get all book elements
             var books = document.getElementsByClassName("book");
 
-            // Loop through each book and check if it matches the selected filters
             for (var i = 0; i < books.length; i++) {
                 var book = books[i];
                 var bookGenre = book.getAttribute("data-genre");
@@ -61,17 +59,15 @@
                 var bookRating = book.getAttribute("data-rating");
                 var bookStatus = book.getAttribute("status-id");
 
-                // Check if the book matches the selected filters
                 var genreMatch  = (genre === "all"  || bookGenre === genre  );
                 var lengthMatch = (length === "any" || bookLength === length);
                 var ratingMatch = (rating === "any" || bookRating === rating);
                 var statusMatch = (status === "any" || bookStatus === status);
 
-                // Show or hide the book based on the filter match
                 if (genreMatch && lengthMatch && ratingMatch && statusMatch) {
-                    book.style.display = "block"; // Show the book
+                    book.style.display = "block";
                 } else {
-                    book.style.display = "none"; // Hide the book
+                    book.style.display = "none"; 
                 }
             }
         }
@@ -114,6 +110,7 @@
         <a href="https://deathbroke69.itch.io/100-days-of-ashes/devlog/1029315/100k-characters-milestone-meet-tobias-hall-chief-of-security"><img src="updates_placeholder.png" alt="Update 2" style="width:200px;height:200px;" float: left></a>
     </div>
 
+    <br><br><br><br><br><br><hr><br><br><br><br><br><br>
     <!-- shows all books and a short description thereof-->
     <div id="bookbar">
         <h1>All Books</h1>
@@ -222,7 +219,8 @@
 <footer>
     <hr>
     <a href="test.html">Impressum</a> |
-    <a href="mailto:klimpau@gmx.de">Contact</a> |
+    <a href="mailto:klimpau@gmx.de">Contact (E-Mail)</a> |
+    <a href="https://forms.gle/Vejuvqmcvq5KMHsB8">Feedback Form</a> |
     <a href="test.html">dunno</a> 
 </footer>
 </html>
