@@ -40,6 +40,44 @@
         li a{color:#2a28a1; display: block}
         li a:hover {background-color: #da0d0d;}
     </style>
+    <script>
+
+        function filter_books(genre = "all", length = "any", rating = "any", status = "any") {
+
+            // Get the selected filter values
+            var genre = document.getElementById("genre").value;
+            var length = document.getElementById("length").value;
+            var rating = document.getElementById("rating").value;
+            var status = document.getElementById("status").value;
+
+            // Get all book elements
+            var books = document.getElementsByClassName("book");
+
+            // Loop through each book and check if it matches the selected filters
+            for (var i = 0; i < books.length; i++) {
+                var book = books[i];
+                var bookGenre = book.getAttribute("data-genre");
+                var bookLength = book.getAttribute("data-length");
+                var bookRating = book.getAttribute("data-rating");
+                var bookStatus = book.getAttribute("status-id");
+
+                // Check if the book matches the selected filters
+                var genreMatch  = (genre === "all"  || bookGenre === genre  );
+                var lengthMatch = (length === "any" || bookLength === length);
+                var ratingMatch = (rating === "any" || bookRating === rating);
+                var statusMatch = (status === "any" || bookStatus === status);
+
+                // Show or hide the book based on the filter match
+                if (genreMatch && lengthMatch && ratingMatch && statusMatch) {
+                    book.style.display = "block"; // Show the book
+                } else {
+                    book.style.display = "none"; // Hide the book
+                }
+            }
+        }
+
+
+    </script>
 </head>
 
 <body>
@@ -78,36 +116,103 @@
 
     <!-- shows all books and a short description thereof-->
     <div id="bookbar">
-        <h1>Misc. Books</h1>
-        <div class="grid-container">
-            <div class="left">
-                <a href="test.html">
-                    <img src="https://cdn.pixabay.com/photo/2016/10/26/10/05/book-1771073_960_720.jpg" alt="Book 2" style="width:200px;height:200px; border-radius:10%; float:left;" float: left/>
-                </a>
-            </div>
+        <h1>All Books</h1>
+        <div id="book_filter">
+            <select name="genre" id="genre">
+                <option value="all" selected>All Genres</option>
+                <option value="sci-fi">Sci-Fi</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="political">Political</option>
+                <option value="romance">Romance</option>
+                <option value="mystery">Mystery</option>
+                <option value="non-fiction">Non-Fiction</option>
+            </select>
 
-            <div class="right">
-                This book is ready to be sent out. It deals with the following topics: Thunder, thunder, thu-thu-thunder. I was lightning; before the thunder.
-            </div>
-        
-            <div class="left">
-                <a href="test.html">
-                    <img src="https://cdn.pixabay.com/photo/2016/10/26/10/05/book-1771073_960_720.jpg" alt="Book 3" style="width:200px;height:200px; border-radius:10%; float:left;" float: left/>
-                </a>
-            </div>
+            <select name="length" id="length">
+                <option value ="any" selected>Any Length</option>
+                <option value ="demo">Demo</option>
+                <option value="very short">Short (&lt; under 50k words)</option>
+                <option value="short">Short (~50k-100k words)</option>
+                <option value="medium">Medium (~100k-200k words)</option>
+                <option value="long">Long (&gt; ~200k-500k words)</option>
+                <option value ="very long">Epic (&gt; over 500k words)</option>
+            </select>
 
-            <div class="right">
-                This book is ready to be sent out. It deals with the following topics: Thunder, thunder, thu-thu-thunder. I was lightning; before the thunder.
-            </div>        
+            <select name="rating" id="rating">
+                <option value="any" selected>Any Rating</option>
+                <option value="everyone">Everyone</option>
+                <option value="teen">Teen</option>
+                <option value="mature">Mature</option>
+                <option value="adult">Adult</option>
+            </select>
+
+            <select name="status" id="status">
+                <option value="any" selected>Any Status</option>
+                <option value="finished">Finished</option>
+                <option value="in progress">In Progress</option>
+                <option value="on hold">On Hold</option>
+                <option value="abandoned">Abandoned</option>
+                <option value="demo">Demo</option>
+                <option value="upcoming">Upcoming</option>
+            </select>
+            <br>
+            <button type="button" onclick=filter_books()>Filter</button>
+
+
+        </div>
+        <div id="book1" class="book" data-genre="political" data-length="very long" data-rating="mature" status-id="finished">
+            <div class="grid-container">
+                <div class="left">
+                    <a href="book1.html">
+                        <img src="https://img.itch.zone/aW1nLzIzMDg0MDYzLnBuZw==/original/ZxZO4u.png" alt="100 Days of Ashes" style="width:200px;height:200px; border-radius:10%; float:left;" float: left/>
+                    </a>
+                </div>
+
+                <div class="right">
+                    This interactive novel is ccurrently being worked on. Keep ready for a steady supply of updates and new announcemnts. The novel deals with the political side after a young republic is thrown into disarray following a devastating 8.8mag earthquake and its aftermath.
+                </div>
+            </div>
+        </div>
+
+        <div id="book2" class="book" data-genre="all" data-length="demo" data-rating="all" status-id="finished">
+            <div class="grid-container">
+                <div class="left">
+                    <a href="test.html">
+                        <img src="https://cdn.pixabay.com/photo/2016/10/26/10/05/book-1771073_960_720.jpg" alt="Book 2" style="width:200px;height:200px; border-radius:10%; float:left;" float: left/>
+                    </a>
+                </div>
+
+                <div class="right">
+                    This general tech demo is ready to be sent out. It deals with the following topics: Thunder, thunder, thu-thu-thunder. I was lightning; before the thunder.
+                </div>
+            </div>
+        </div>
             
-            <div class="left">
-                <a href="test.html">
-                    <img src="https://cdn.pixabay.com/photo/2016/10/26/10/05/book-1771073_960_720.jpg" alt="Book 4" style="width:200px;height:200px; border-radius:10%; float:left;" float: left/>
-                </a>
-            </div>
+        <div id="book3" class="book" data-genre="romance" data-length="medium" data-rating="adult" status-id="finished">
+            <div class="grid-container">
+                <div class="left">
+                    <a href="test.html">
+                        <img src="https://cdn.pixabay.com/photo/2016/10/26/10/05/book-1771073_960_720.jpg" alt="Book 3" style="width:200px;height:200px; border-radius:10%; float:left;" float: left/>
+                    </a>
+                </div>
 
-            <div class="right">
-                This book is ready to be sent out. It deals with the following topics: Thunder, thunder, thu-thu-thunder. I was lightning; before the thunder.
+                <div class="right">
+                    This short dark-romance book is ready to be sent out. It deals with the following topics: Thunder, thunder, thu-thu-thunder. I was lightning; before the thunder.
+                </div>
+            </div>
+        </div>
+            
+        <div id="book4" class="book" data-genre="political" data-length="medium" data-rating="everyone" status-id="finished">
+            <div class="grid-container">
+                <div class="left">
+                    <a href="test.html">
+                        <img src="https://cdn.pixabay.com/photo/2016/10/26/10/05/book-1771073_960_720.jpg" alt="Book 4" style="width:200px;height:200px; border-radius:10%; float:left;" float: left/>
+                    </a>
+                </div>
+
+                <div class="right">
+                    This book is ready to be sent out. It deals with the following topics: Thunder, thunder, thu-thu-thunder. I was lightning; before the thunder.
+                </div>
             </div>
         </div>
     </div>
